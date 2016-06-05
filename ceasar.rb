@@ -52,5 +52,4 @@ puts "Type your text:"
 input_text = gets.chomp
 ceasar_cipher(input_text)
 
-ceasar_decipher("BPgZ CjXkTg lPh WTgT!", 51)
 ceasar_decipher("Pdun Qxlyhu zdv khuh!", 8993)
