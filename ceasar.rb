@@ -3,7 +3,7 @@ $alphabet_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567
 # Method ceasar_cipher(string) creates a new encrypted string and a key with a number (shift)
 
 def ceasar_cipher(txt)
-	shift = rand (1..10_000)
+	shift = rand (1..1000)
 	if shift > 62
 		shift = shift % 62
 	end
