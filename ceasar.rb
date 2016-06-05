@@ -8,11 +8,10 @@ def ceasar_cipher(txt)
 		shift = shift % 62
 	end
 	puts shift
-	encrypted_string = ""
+	encrypted_string = String.new
 	txt.split('').each do | d | 
-		if $alphabet_string.include? d
-			old_index = $alphabet_string.index(d)			
-			new_index = old_index + shift
+		if $alphabet_string.include? d 			
+			new_index = $alphabet_string.index(d) + shift
 			if new_index > 62
 				new_index = new_index - 62
 			end
@@ -32,11 +31,10 @@ def ceasar_decipher(code_text, key)
 	if key > 62
 		key = key % 62
 	end
-	deciphered_string = ""
+	deciphered_string = String.new
 	code_text.split('').each do | d | 
 		if $alphabet_string.include? d
-			encr_index = $alphabet_string.index(d)
-			original_index = encr_index - key
+			original_index = $alphabet_string.index(d) - key
 			if  original_index < 0
 				original_index += 62
 			end
