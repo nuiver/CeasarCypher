@@ -3,18 +3,11 @@ $alphabet_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567
 # Method ceasar_cipher(string) creates a new encrypted string and a key with a number (shift)
 
 def ceasar_cipher(txt)
-	shift = rand (1..1000)
-	if shift > 62
-		shift = shift % 62
-	end
-	puts shift
+	shift = rand (1..10_000)
 	encrypted_string = String.new
 	txt.split('').each do | d | 
 		if $alphabet_string.include? d 			
-			new_index = $alphabet_string.index(d) + shift
-			if new_index > 62
-				new_index = new_index - 62
-			end
+			new_index = ( $alphabet_string.index(d) + shift )% 62
 			encrypted_string << $alphabet_string[new_index]
 		else
 			encrypted_string << d
@@ -50,5 +43,8 @@ puts "Type your text:"
 input_text = gets.chomp
 ceasar_cipher(input_text)
 
-ceasar_decipher("Pdun Qxlyhu zdv khuh!", 8993)
-ceasar_decipher("Pdun Qxlyhu zdv khuh!", 8913)
+puts "Type your code:"
+input_code = gets.chomp
+puts "Type the key:"
+input_key = gets.chomp.to_i
+ceasar_decipher(input_code, input_key)
